@@ -8,9 +8,15 @@
     <body>
         <h2>Formulario basico</h2>
 
-        <form action="procesar.php" sethood="get">
+        <form action="procesar.php" method="post">
+            <label>Nombre</label>
+            <input type="text" name="nombre" placeholder="Su nombre aquí">
+            <br>
+            <br>
             <label>Edad</label>
             <input type="number" name="edad" placeholder="su edad aquí">
+            <br>
+            <br>
             <input type="submit" value="Enviar">
         </form>
     </body>

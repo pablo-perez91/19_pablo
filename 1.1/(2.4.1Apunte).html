@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+   <title>Formulario apunte</title>
+    </head>
+
+    <body>
+        <h2>Formulario apunte</h2>
+        <form action="mailto:pablo.perez91@educa.madrid.org" method="post">
+        <Fieldset>
+            <legend>tu superhero </legend>
+            <label> Tu superhero </label>
+            <br>
+            <select name="superhero" id="power">
+                <option value="">---------------</option>
+                <option value="Iron Man">Iron Man </option>
+                <option value="The Hulk">The Hulk </option>
+            </select>
+            <br>
+            <label>Color</label>
+            <br>
+            <input type="color">
+        </Fieldset>
+        <fieldset>
+            <legend>Tus Datos </legend>
+            <br>
+            <label>Nombre </label>
+            <br>
+            <input type="text" name="nombre">
+            <br>
+            <br>
+            <label>Telefono</label>
+            <br>
+            <input type="number"> Formato: +34 --- -- -- --
+        </fieldset>
+        <fieldset>
+            <legend>Frutas (DATALIST)</legend>
+            <br>
+            <label >Frutas</label>
+            <br>
+            <br>
+            <input list="Frustas_list" name="Frutas" placeholder="Eligue una Fruta" />
+            <datalist id="Frustas_list">
+                <option label="Banana" value="Banana"></option>
+                <option label="Naranja" value="Naranja"></option>
+                <option label="Fresa" value="Fresa"></option>
+                <option label="Piña" value="Piña"></option>                
+            </datalist>
+        </fieldset>
+        <fieldset>
+            <legend>Frutas (SELECT)</legend>
+            <select name="fruta" id="fruta">
+            <option value="">-------------</option>
+            <optgroup label="Asia">
+                <option value="Banana"> Banana</option>
+                <option value="Naranja"> Naranja</option>
+            </optgroup>
+            <optgroup label="Latinoamerica">
+                <option value="Tomate"> Tomate</option>
+                <option value="Patata"> Patata</option>
+            </optgroup>
+            </select>
+        </fieldset>
+        <br>
+        <br>
+        <input type="submit" value="Enviar">
+    </body>
+</html>
