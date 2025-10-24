@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+   <title>Formulario Avanzado</title>
+   <style>
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type=radio]+label,
+        input[type=checkbox]+label {
+            display: inline;
+        }
+
+        input[type=submit],
+        button[type=submit],
+        button[type=reset] {
+            display: inline;
+            margin-right: 10px;
+            margin-top: 15px;
+            color: white;
+            border-radius: 10px;
+        }
+
+        input[type=submit], button[type=submit] {
+            background-color: rgb(79, 60, 96);
+        }
+
+        button[type=reset] {
+            background-color: rgb(196, 76, 20);
+        }
+
+        *:required {
+            border-color: gold;
+        }
+       
+   </style>
+    </head>
+
+    <body>
+        <h2>Formulario Avanzado</h2>
+        <form action="mailto:pablo.perez91@educa.madrid.org" method="post">
+        <Fieldset>
+            <legend>Tu Superhéroe </legend>
+            <label> Tu Superhéroe </label>
+            <select name="superhero" id="power">
+                <option value="">---------------</option>
+                <option value="Iron Man">Iron Man </option>
+                <option value="The Hulk">The Hulk </option>
+            </select>
+            <label>Color</label>
+            <input type="color">
+        </Fieldset>
+        <fieldset>
+            <legend>Datos de contacto </legend>
+            <label>Nombre </label>
+            <input type="text" name="nombre" placeholder="Nombre Apellido" required>
+            <label>Telefono</label>
+            <input type="number"> Formato: 9999999
+            <label> Fecha </label>
+            <input type="date" name="FechaNacimiento" >
+            <label>Contraseña</label>
+            <input type="password" name="clave">
+            
+        </fieldset>
+        <fieldset>
+            <legend>Selecciona forma de contacto preferida </legend>
+            <input type="radio" name="valor" value="Email"> Email
+            <input type="radio" name="valor" value="Telefono"> Telefono
+            <input type="radio" name="valor" value="Carta"> Carta 
+        </fieldset>
+        <fieldset>
+            <legend>Eligue Tus Asignaturas Favoritas</legend>
+            <div>
+                <input type="checkbox"  name="afición" value="Aplicaciones Web"> Aplicaciones Web                                                       
+            </div>
+            <div>
+                <input type="checkbox"  name="afición" value="Seguridad"> Seguridad
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Formularios no usados en clase</legend>
+            <input type="image" name="image" src="" alt="Enviar"/>
+            <label>Valora el Formulario</label>
+            <input type="range" name="range" min="0" max="25"/>
+            <label >Selecciona un Archivo</label>
+            <input type="file" accept="image/*, text/*" name="file"/>
+            <label>Selecciona una hora sin zona horaria</label>
+            <input type="time" name="time"/>
+            <label>Asigna una URL</label>
+            <input type="url" name="url"/>
+        </fieldset>
+        <input type="submit" value="Enviar">
+        <button type="reset">Resetear</button>
+    </body>
+</html>
