@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Práctica CSS Halloween — Versión Extendida</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        :root {
+            --bg: #1b0b2e;
+            --text: #f3e9ff;
+            --accent: #ff9800;
+            --panel: #2d1c4a;
+            --shadow: rgba(255, 120, 0, 0.6);
+            --blood: #b30000;
+        }
+
+        body.light-mode {
+            --bg: #f9f6ff;
+            --text: #1b0b2e;
+            --accent: #ff7a00;
+            --panel: #ddd0f0;
+            --shadow: rgba(255, 120, 0, 3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Trebuchet MS', sans-serif;
+            min-height: 100vh; /* altura mínima */
+            transition: background 0.5s, color 0.5s;
+            display: flex; /* centrado general */
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto; /* centrado horizontal */
+            padding: 20px;
+            flex: 1; /* empuja el footer hacia abajo */
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            text-align: center;
+        }
+
+        header p.lead {
+            color: var(--text);
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 10px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        main {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            justify-content: center; /* CAMBIO: centra el contenido principal */
+        }
+
+        .left,
+        .right {
+            flex: 1;
+        }
+
+        @media (max-width: 700px) {
+            main {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .pumpkin {
+            background: var(--accent);
+            border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
+            padding: 25px;
+            box-shadow: 0 0 40px var(--shadow);
+            text-align: center;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .pumpkin h2 {
+            color: #2c0f0f;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .face {
+            margin: 15px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .eye {
+            display: inline-block;
+            background: #000;
+            width: 40px;
+            height: 40px;
+            border-radius: 10%;
+            margin: 0 10px;
+            animation: blink 4s infinite;
+        }
+
+        @keyframes blink {
+            0%, 90%, 100% { transform: scaleY(1); }
+            95% { transform: scaleY(0.1); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .mouth {
+            background: #000;
+            width: 100px;
+            height: 20px;
+            border-radius: 50% / 100%;
+            margin-top: 8px;
+        }
+
+        .activities li {
+            background: var(--panel);
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            list-style: none;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .activities li:hover {
+            background: var(--accent);
+            color: var(--bg);
+            transform: scale(1.05);
+        }
+
+        .cta {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: var(--panel);
+            color: var(--text);
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta:hover {
+            background: var(--accent);
+            color: var(--bg);
+            transform: scale(1.1);
+        }
+
+        /* 🩸 FOOTER DE ANCHO COMPLETO Y CENTRADO */
+        footer {
+            align-self: stretch;
+            width: 100%;
+            background: var(--blood) url('sangre.jpg') repeat-x bottom;
+            background-size: contain;
+            color: #fff;
+            text-align: center;
+            padding: 60px 10px 40px;
+            font-weight: bold;
+            border-top: 3px solid #700000;
+            overflow: hidden;
+            position: relative;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(to bottom, transparent 0%, red 100%);
+            clip-path: polygon(0 0, 5% 80%, 10% 0, 15% 90%, 20% 0, 25% 75%, 30% 0, 35% 90%, 40% 0, 45% 85%, 50% 0, 55% 90%, 60% 0, 65% 80%, 70% 0, 75% 85%, 80% 0, 85% 80%, 90% 0, 95% 85%, 100% 0);
+            animation: dripping 3s infinite ease-in-out;
+        }
+
+        @keyframes dripping {
+            0% { transform: translateY(0px); opacity: 1; }
+            50% { transform: translateY(8px); opacity: 0.8; }
+            100% { transform: translateY(0px); opacity: 1; }
+        }
+
+        .mode-toggle {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: var(--accent);
+            color: var(--bg);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .mode-toggle:hover {
+            background: var(--panel);
+            color: var(--text);
+        }
+    </style>
+</head>
+
+<body>
+    <button class="mode-toggle" onclick="toggleMode()">Modo claro/oscuro</button>
+
+    <div class="container">
+        <header>
+            <h1>Fiesta Halloween — Taller de CSS</h1>
+            <p class="lead">Aprende animación, variables y estilos modernos. 🎃</p>
+        </header>
+
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="#start">Inicio</a></li>
+                <li><a href="#activities">Actividades</a></li>
+                <li><a href="#about">Sobre</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="left" id="start">
+                <div class="pumpkin" role="img" aria-label="Calabaza de Halloween">
+                    <h2>Calabaza animada</h2>
+                    <div class="face">
+                        <div>
+                            <span class="eye left-eye" aria-hidden="true"></span>
+                            <span class="eye right-eye" aria-hidden="true"></span>
+                        </div>
+                        <div class="mouth" aria-hidden="true"></div>
+                    </div>
+                    <p>¡Esta calabaza parpadea y flota! Añade tus propios efectos.</p>
+                    <a class="cta" href="#activities">¡Truco o trato!</a>
+                </div>
+            </section>
+
+            <aside class="right" id="activities">
+                <h3>Actividades extra</h3>
+                <ul class="activities">
+                    <li>Cambia el fondo por una imagen (estilo fondo de pantalla).</li>
+                    <li>Personaliza el modo claro con nuevos tonos.</li>
+                    <li>Añade una nueva opción de menú que navegue a una página externa</li>
+                    <li>Cambia la imagen de fondo del footer por una que te guste</li>
+                    <li>Incluye debajo de la calabaza una imagen de un fantasma</li>
+                </ul>
+
+                <section id="about">
+                    <h4>Sobre la práctica</h4>
+                    <p>Esta extensión permite practicar animaciones, variables CSS y modo oscuro. Observa cómo cambian
+                        los colores con <code>:root</code> y el botón superior.</p>
+                </section>
+            </aside>
+        </main>
+    </div>
+
+    <footer>
+        <p>Material para clase — Halloween CSS Extended · © 2025</p>
+    </footer>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('light-mode');
+        }
+    </script>
+</body>
+
+</html>
