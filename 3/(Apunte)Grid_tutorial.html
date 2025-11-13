@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Grid tutorial</title>
+        <style>
+            html,
+            body{
+                padding: 0px;
+                margin: 0px;
+            }
+
+            .container {
+                display: grid;
+                grid-template-rows: 25% 50% 25%;
+                grid-template-columns: 50% 25% 25%;
+                grid-template-areas: 
+                 "header header header" /*Fila 1*/
+                 "main main aside"  /*Fila 2*/
+                 "footer footer footer" /*Fila 3*/
+                ;
+                height: 100vh;
+            }
+            header {
+                grid-area: header;
+                background-color: cadetblue;
+            }
+            main {
+                grid-area: main;
+                background-color: tomato;
+            }
+            aside{
+                grid-area: aside;
+                background-color: turquoise;
+            }
+            footer{
+                grid-area: footer;
+                background-color: violet;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <header>
+                <h1>HEADER</h1>
+            </header>
+            <main>
+                <h1>MAIN</h1>
+                <section>
+                    <h2>Seccion 1</h2>
+                    <article>
+                        <p>Articulo 1</p>
+                    </article>
+                </section>
+                <section>
+                    <h2>Seccion 2</h2>
+                    <article>
+                        <p>Articulo 2</p>
+                    </article>
+                </section>
+            </main>
+            <aside>
+                <h1>ASIDE</h1>
+            </aside>
+            <footer>
+                <h1>FOOTER</h1>
+            </footer>
+        </div>    
+
+    </body>
+
+</html>
