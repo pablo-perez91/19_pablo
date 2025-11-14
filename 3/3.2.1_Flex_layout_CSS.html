@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>flex tutorial</title>
+    </head>
+    <style>
+        .container{
+            background-color: purple;
+            display: flex;
+            justify-content: end;    
+        }
+        .container div {
+            background-color: orange;
+            margin: 5px;
+            padding: 5px;
+        }
+        .container2{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 90px;
+        
+        }
+        .container2 div {
+            background-color: orange;
+            border: 5px solid black;
+            padding: 8px;
+            padding-right:15px ;
+        }
+        #nav {
+            background-color: beige;
+        }
+        #nav ul{
+            display: flex;
+            justify-content: space-evenly;
+            list-style:none ;
+        } 
+        #nav ul li{
+            background-color: brown;
+            padding: 10PX 15PX;
+            border: 5px solid black;
+        }  
+        #nav ul li:hover{
+            background-color: none;
+        }
+        #nav ul li a{
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+ 
+    </style>
+    <body>
+        <div class="container">
+            <div class="caja">boton 1</div>
+            <div class="caja">boton 2</div>
+            <div class="caja">boton 3</div>
+            <div class="caja">boton 4</div>
+        </div>
+        <div class="container2">
+            <div class="caja">boton 1</div>
+            <div class="caja">boton 2</div>
+            <div class="caja">boton 3</div>
+            <div class="caja">boton 4</div>
+        </div>
+        <nav id="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </body>
+</html>
