@@ -14,7 +14,12 @@
         console.log(`si es una huida logica`);
         }
         
+        
         var user = prompt(`introduzca su user: `);
         console.log(`el user es:`+ user);
         document.write(user);
         document.write(`<h1>` + user + `<\h1>`);
+        var documentacion = prompt(`introduce un dato personal`)
+        document.write(`<h2>` + documentacion + `<\h2>`);
+        var info = prompt(`introduce informacion`)
+        document.write(`<p>` + info + `<\p>`);
