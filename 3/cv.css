@@ -1,18 +1,20 @@
 body {
   margin: 0;
-  font-family: 'Raleway';
+  font-family: 'raleway';
   font-size: 16px;
   line-height: 1.8em;
 }
 a .fab{
-color: #A7B8BF;
+color: darkred;
+padding: 85% 85% 85%;
+margin: 52% ;
+
 }
 .social-links{
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 55px;
   align-items: center;
-  justify-content: center;
 }
 .social-links a {
   text-decoration: none;
@@ -23,7 +25,7 @@ color: #A7B8BF;
 .social-links a .fab{
 border: 2px solid red;
 border-radius: 50%;
-width: 55%;
+width: 100%;
 height: 55%;
 line-height: 55%;
 text-align: center;
@@ -51,10 +53,11 @@ article {
 header {
   padding: 2pc;
   text-align: center;
-  background-image: url(/assets/img/BGP4.jpg);
+  background-image: url(./../assets/img/BGP4.jpg);
   background-size: cover;
   background-position: fixed;
   color: white;
+  
 }
 
 header section {
@@ -140,4 +143,6 @@ footer {
   background: #A7B8BF;
   color: white;
   text-align: right;
+  margin-top: 16vh ;
+  
 }
