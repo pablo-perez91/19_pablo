@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>formjavascript</title>
+ 
+    <style>
+        body {
+            padding: 15px;
+        }
+    </style>
+    <script src="ejemplo2.js"></script>
+
+</head>
+<body>
+   <h1>prueba</h1>
+   <form method="post">
+    <label > Name</label>
+    <input id="name" type="text" name="nombre">
+    <br>
+    <label>Contraseña</label>
+    <input type="password" id="pass1" name="pass">
+    <br>
+    <label> Repita contraseña</label>
+    <input type="password" id="pass1" name="pass">
+    <br>
+    
+    <input onclick=enviarform() value="enviar">
+    </form>
+    <div id="Mensajes"><p></p></div>
+</body>
+</html>
